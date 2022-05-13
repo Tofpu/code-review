@@ -1,6 +1,6 @@
 ---
 id: szp6r8w3ldllgnitjlwqi36
-title: 'Code Review: Cooleg'
+title: Cooleg 1
 desc: ''
 updated: 1652443218133
 created: 1652414487503
