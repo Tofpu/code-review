@@ -100,10 +100,16 @@ publishing:
     writeStubs: false
     seo:
         title: 'Code Review | tofpu.me'
-        description: 'Here is where I review people''s code'
+        description: >-
+            I'm a self-taught programmer, and this site was created
+            for me to share my code-reviews to the public.
+        author: tofpu
+        twitter: tofpu
     github:
+        cname: code-review.tofpu.me
         enableEditLink: true
         editLinkText: Edit this page on GitHub
         editBranch: main
         editViewMode: tree
+        editRepository: 'https://github.com/dendronhq/dendron-site'
     enablePrettyLinks: true

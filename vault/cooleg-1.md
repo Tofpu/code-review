@@ -2,7 +2,7 @@
 id: szp6r8w3ldllgnitjlwqi36
 title: 'Code Review: Cooleg'
 desc: ''
-updated: 1652419325248
+updated: 1652430161990
 created: 1652414487503
 ---
 
@@ -25,7 +25,28 @@ One of the fundamentals of OOP (Object-Oriented Programming) concepts is Encapsu
 ### References, Singleton and Static:
 I believe that the `Manage` reference class should either, be cached somewhere, transformed into a Singleton, or turn the `ItemStack`'s to be constant.
 
-As far as I can tell from the code, the ItemStack that was created was not bound to change, so it should be a constant. We'll be utilizing something called `Static Initialization Block` - I transformed a bit of your code in <https://gist.github.com/Tofpu/343bd4c79bde5129f38dfe987e122e9d>
+As far as I can tell from the code, the ItemStack that was created was not bound to change in runtime (when the code is running), so it should be a constant. We'll be utilizing something called `Static Initialization Block`.
+
+Example can be seen in https://gist.github.com/Tofpu/343bd4c79bde5129f38dfe987e122e9d or here:
+```java
+  final ItemStack PVP_TOGGLE_ENABLED;
+  final ItemStack PVP_TOGGLE_DISABLED;
+
+  static {
+    PVP_TOGGLE_ENABLED = new ItemStack(Material.GREEN_CONCRETE);
+    final ItemMeta pvpToggledEnabledMeta = pvptoggle.getItemMeta();
+    pvpToggledEnabledMeta.setDisplayName(ChatColor.GREEN + "PVP is currently enabled!");
+
+    pvpToggledEnabledMeta.setLore(Collections.singletonList("Click to disable PVP");
+    PVP_TOGGLE_ENABLED.setItemMeta(pvpToggledEnabledMeta);
+
+    PVP_TOGGLE_DISABLED = new ItemStack(Material.GREEN_CONCRETE);
+    final ItemMeta pvpToggledDisabledMeta = pvptoggle.getItemMeta();
+    pvpToggledDisabledMeta.setDisplayName(ChatColor.GREEN + "PVP is currently disabled!");
+
+    pvpToggledDisabledMeta.setLore(Collections.singletonList("Click to enable PVP");
+    PVP_TOGGLE_DISABLED.setItemMeta(pvpToggledDisabledMeta);
+```
 
 #### Reasoning
 My personal belief is that if a new instance of a class has been called twice at any given moment, the new instance is (or should be) uniquely different to the previous instance that was created - and if it weren't, it should be cached, or transformed into a Singleton.
@@ -58,7 +79,23 @@ I see that there's unnecessary lookup operations occurring, which could simply b
 
 It might seem to be insignificant at the moment, but that won't always be the case when you're dealing with concurrent operations (which will cost you a lot of time debugging the issue)
 
-Example can be seen in <https://gist.github.com/Tofpu/2af109422b32b02ed33b421281751910>
+Example can be seen in <https://gist.github.com/Tofpu/2af109422b32b02ed33b421281751910> or here:
+```java
+  final Map<String, Integer> scoreMap = new HashMap<>();
+  scoreMap.put("Tofpu", 69);
+  
+  // doing multiple lookup to scoreMap, bad!
+  if (scoreMap.get("Tofpu") > 69) {
+      final Integer score = scoreMap.get("Tofpu");
+      scoreMap.put("Tofpu", score + 1);
+  }
+
+  // decreased the lookup operation to one, good!
+  final Integer score = scoreMap.get("Tofpu");
+  if (score > 69) {
+      scoreMap.put("Tofpu", score + 1);
+  }
+```
 
 ### == & .equals: 
 Comparing an Enum with `.equals` is a really bad practice, and is not correct whatsoever. It should be changed to `==` - as a matter of fact, Enums are integers behind the scenes, and integers are supposed to be compared with `==`, not with `.equals`.
