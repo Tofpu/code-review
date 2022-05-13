@@ -91,6 +91,8 @@ publishing:
     enableFrontmatterTags: true
     enableHashesForFMTags: false
     enableRandomlyColoredTags: true
+    enableHierarchyDisplay: true
+    hierarchyDisplayTitle: Children
     duplicateNoteBehavior:
         action: useVault
         payload:
