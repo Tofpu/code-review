@@ -2,7 +2,7 @@
 id: szp6r8w3ldllgnitjlwqi36
 title: 'Code Review: Cooleg'
 desc: ''
-updated: 1652430161990
+updated: 1652431960359
 created: 1652414487503
 ---
 
@@ -20,7 +20,62 @@ created: 1652414487503
 I'll be doing a quick review since I spent the rest of my time setting up this site. The next review shall be more in-depth.
 
 ### Encapsulation:  
-One of the fundamentals of OOP (Object-Oriented Programming) concepts is Encapsulation, and the project is not following that whatsoever (check the references to learn more).
+One of the fundamentals of OOP (Object-Oriented Programming) concepts is called Encapsulation. Encapsulation (or also referred to as Information Hiding) is in simple terms, a concept of locking behind your data, and have methods interacting with the data instead, that way you would retain the ability to keep track of what's happening.
+
+By not applying that concept to your code design, you're essentially giving up control of your data to the hands of other classes, and that's not good.
+
+If you're wondering why that's the case, let me create a scenario to explain the cons.
+
+#### Scenario: Wanting to print out the data
+Let's say we wanted to print out the data before and after every time it's updated for debugging purposes.
+
+##### Not Following Encapsulation Pattern
+```java
+    public class Person {
+        public int age;
+
+        public Person(final int age) {
+            this.age = age;
+        }
+
+        // not possible since we gave up control of our data
+    }
+
+    public class RandomClass {
+        public modifyPersonAge() {
+            final Person person = new Person(5);
+            person.age = 6;
+        }
+    }
+```
+
+##### Following Encapsulation Pattern
+```java
+    public class Person {
+        // retained control of our data
+        private int age;
+
+        public Person(final int age) {
+            this.age = age;
+        }
+
+        // added a way to update the age, but with our own way
+        public void setAge(final int age) {
+            Logger.debug("Before " + age);
+            this.age = age;
+            Logger.debug("After " + age);
+        }
+    }
+
+    public class RandomClass {
+        public modifyPersonAge() {
+            final Person person = new Person(5);
+            person.setAge(6); // > before: 5 > After: 6
+        }
+    }
+```
+
+It's a pretty simple concept in hindsight, but it's a fundamental one to say the least.
 
 ### References, Singleton and Static:
 I believe that the `Manage` reference class should either, be cached somewhere, transformed into a Singleton, or turn the `ItemStack`'s to be constant.
