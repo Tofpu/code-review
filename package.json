@@ -6,6 +6,7 @@
   "author": "Tofpu <tofpuu@gmail.com>",
   "license": "",
   "dependencies": {
+    "@ant-design/dark-theme": "^2.0.2",
     "@dendronhq/dendron-cli": "*"
   }
 }
