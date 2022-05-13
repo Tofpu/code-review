@@ -2,7 +2,7 @@
 id: szp6r8w3ldllgnitjlwqi36
 title: 'Code Review: Cooleg'
 desc: ''
-updated: 1652433088523
+updated: 1652443218133
 created: 1652414487503
 ---
 
@@ -152,12 +152,21 @@ Example can be seen in <https://gist.github.com/Tofpu/2af109422b32b02ed33b421281
   }
 ```
 
-### == & .equals: 
-Comparing an Enum with `.equals` is a really bad practice, and is not correct whatsoever. It should be changed to `==` - as a matter of fact, Enums are integers behind the scenes, and integers are supposed to be compared with `==`, not with `.equals`.
+### `==` and `.equals` in Enums: 
+While comparing Enum's with .equals is not certainly wrong, it's overall a better practice to directly compare Enum's with `==`.
+
+By following that advice, you'll gain the following advantages:
+* NullPointerException won't be thrown if the mentioned enum was nonexistent.
+* Be subject to type compatibility at compile time.
+
+You can find references about this below.
+
+## Thanks to:
+- Merlin (for correcting me about the differences between `==` and `.equals` in Enums)
 
 ## References:
 - Encapsulation - <https://refactoring.guru/encapsulate-field>
 - Bukkit Scheduler - <https://bukkit.fandom.com/wiki/Scheduler_Programming#Example_2>
-- `==` vs `.equals`- <https://stackoverflow.com/questions/7520432/what-is-the-difference-between-and-equals-in-java>
+- Differences between `==` and `.equals` in Enums - <https://stackoverflow.com/questions/1750435/comparing-java-enum-members-or-equals>
 - Singleton - <https://refactoring.guru/design-patterns/singleton>
 - Static Initialization Block - <https://stackoverflow.com/questions/335311/what-is-the-difference-between-a-static-and-a-non-static-initialization-code-blo>
