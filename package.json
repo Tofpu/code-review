@@ -1,10 +1,10 @@
 {
-  "name": "template.publish.github-action",
+  "name": "code-review",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/dendronhq/template.publish.github-action.git",
-  "author": "Kevin <kevin@dendron.so>",
-  "license": "MIT",
+  "repository": "https://github.com/tofpu/code-review.git",
+  "author": "Tofpu <tofpuu@gmail.com>",
+  "license": "",
   "dependencies": {
     "@dendronhq/dendron-cli": "*"
   }
