@@ -96,8 +96,8 @@ publishing:
             - vault
     writeStubs: false
     seo:
-        title: Dendron
-        description: Personal knowledge space
+        title: 'Code Review | tofpu.me'
+        description: 'Here is where I review people''s code'
     github:
         enableEditLink: true
         editLinkText: Edit this page on GitHub
