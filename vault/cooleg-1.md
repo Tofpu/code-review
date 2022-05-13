@@ -2,7 +2,7 @@
 id: szp6r8w3ldllgnitjlwqi36
 title: 'Code Review: Cooleg'
 desc: ''
-updated: 1652431960359
+updated: 1652432487294
 created: 1652414487503
 ---
 
@@ -17,7 +17,7 @@ created: 1652414487503
 * OOP
 
 ## Code Review
-I'll be doing a quick review since I spent the rest of my time setting up this site. The next review shall be more in-depth.
+I'll be experimenting around with the code-review layout, feel free to let me know if you got some feedback.
 
 ### Encapsulation:  
 One of the fundamentals of OOP (Object-Oriented Programming) concepts is called Encapsulation. Encapsulation (or also referred to as Information Hiding) is in simple terms, a concept of locking behind your data, and have methods interacting with the data instead, that way you would retain the ability to keep track of what's happening.
