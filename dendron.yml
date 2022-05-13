@@ -87,7 +87,7 @@ publishing:
     enableSiteLastModified: true
     siteRootDir: docs
     siteUrl: https://code-review.tofpu.me
-    siteFaviconPath: public
+    siteFaviconPath: asset
     enableFrontmatterTags: true
     enableHashesForFMTags: false
     enableRandomlyColoredTags: true
