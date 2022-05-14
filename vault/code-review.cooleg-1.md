@@ -2,7 +2,7 @@
 id: szp6r8w3ldllgnitjlwqi36
 title: Cooleg 1
 desc: ''
-updated: 1652443218133
+updated: 1652492879625
 created: 1652414487503
 ---
 
@@ -126,11 +126,11 @@ The class names should aline with the class responsibilities for readability rea
 I see that the `ChatColor.translateAlternateColorCodes` method is being utilized directly, I'd highly recommend you to create a util class that would call the mentioned method for readability purposes.
 
 ### Naming Convention: 
-It seems like you forgot to follow the Java Naming Convention on Manage class.
+The methods inside Manage class is not following the Java naming conventions.
 
 ## Other
 ### Multiple Lookups: 
-I see that there's unnecessary lookup operations occurring, which could simply be cut down to a single lookup operation by caching said result to a variable. (referring `BorderUtils` class).
+I see that there's unnecessary lookup operations occurrisng, which could simply be cut down to a single lookup operation by caching said result to a variable. (referring `BorderUtils` class).
 
 It might seem to be insignificant at the moment, but that won't always be the case when you're dealing with concurrent operations (which will cost you a lot of time debugging the issue)
 
