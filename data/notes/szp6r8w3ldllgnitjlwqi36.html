@@ -1,0 +1,146 @@
+<h1 id="cooleg-1"><a aria-hidden="true" class="anchor-heading" href="#cooleg-1"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Cooleg 1</h1>
+<h2 id="information"><a aria-hidden="true" class="anchor-heading" href="#information"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Information</h2>
+<h4 id="requestor"><a aria-hidden="true" class="anchor-heading" href="#requestor"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Requestor</h4>
+<ul>
+<li>Cooleg (308702273154973717)</li>
+</ul>
+<h4 id="project-link"><a aria-hidden="true" class="anchor-heading" href="#project-link"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Project Link</h4>
+<ul>
+<li><a href="https://github.com/awesmprogram/Civilization">https://github.com/awesmprogram/Civilization</a></li>
+</ul>
+<h4 id="project-model"><a aria-hidden="true" class="anchor-heading" href="#project-model"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Project Model</h4>
+<ul>
+<li>OOP</li>
+</ul>
+<h2 id="code-review"><a aria-hidden="true" class="anchor-heading" href="#code-review"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Code Review</h2>
+<p>I'll be experimenting around with the code-review layout, feel free to let me know if you got some feedback.</p>
+<h3 id="encapsulation"><a aria-hidden="true" class="anchor-heading" href="#encapsulation"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Encapsulation:</h3>
+<p>One of the fundamentals of OOP (Object-Oriented Programming) concepts is called Encapsulation. Encapsulation (or also referred to as Information Hiding) is in simple terms, a concept of locking behind your data, and have methods interacting with the data instead, that way you would retain the ability to keep track of what's happening.</p>
+<p>By not applying that concept to your code design, you're essentially giving up control of your data to the hands of other classes, and that's not good.</p>
+<p>If you're wondering why that's the case, let me create a scenario to explain the cons.</p>
+<h4 id="scenario-wanting-to-print-out-the-data"><a aria-hidden="true" class="anchor-heading" href="#scenario-wanting-to-print-out-the-data"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Scenario: Wanting to print out the data</h4>
+<p>Let's say we wanted to print out the data before and after every time it's updated for debugging purposes.</p>
+<h5 id="not-following-encapsulation-pattern"><a aria-hidden="true" class="anchor-heading" href="#not-following-encapsulation-pattern"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Not Following Encapsulation Pattern</h5>
+<pre class="language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+
+        <span class="token keyword">public</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token keyword">final</span> <span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// not possible since we gave up control of our data</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RandomClass</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token function">modifyPersonAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">final</span> <span class="token class-name">Person</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            person<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<h5 id="following-encapsulation-pattern"><a aria-hidden="true" class="anchor-heading" href="#following-encapsulation-pattern"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Following Encapsulation Pattern</h5>
+<pre class="language-java"><code class="language-java">    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+        <span class="token comment">// retained control of our data</span>
+        <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+
+        <span class="token keyword">public</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token keyword">final</span> <span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// added a way to update the age, but with our own way</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">final</span> <span class="token keyword">int</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Logger</span><span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"Before "</span> <span class="token operator">+</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+            <span class="token class-name">Logger</span><span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"After "</span> <span class="token operator">+</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RandomClass</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token function">modifyPersonAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">final</span> <span class="token class-name">Person</span> person <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            person<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// > before: 5 > After: 6</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>It's a pretty simple concept in hindsight, but it's a fundamental one to say the least.</p>
+<h3 id="references-singleton-and-static"><a aria-hidden="true" class="anchor-heading" href="#references-singleton-and-static"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>References, Singleton and Static:</h3>
+<p>I believe that the <code>Manage</code> reference class should either, be cached somewhere, transformed into a Singleton, or turn the <code>ItemStack</code>'s to be constant.</p>
+<p>As far as I can tell from the code, the ItemStack that was created was not bound to change in runtime (when the code is running), so it should be a constant. We'll be utilizing something called <code>Static Initialization Block</code>.</p>
+<p>Example can be seen in <a href="https://gist.github.com/Tofpu/343bd4c79bde5129f38dfe987e122e9d">https://gist.github.com/Tofpu/343bd4c79bde5129f38dfe987e122e9d</a> or here:</p>
+<pre class="language-java"><code class="language-java">  <span class="token keyword">final</span> <span class="token class-name">ItemStack</span> PVP_TOGGLE_ENABLED<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> <span class="token class-name">ItemStack</span> PVP_TOGGLE_DISABLED<span class="token punctuation">;</span>
+
+  <span class="token keyword">static</span> <span class="token punctuation">{</span>
+    PVP_TOGGLE_ENABLED <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ItemStack</span><span class="token punctuation">(</span><span class="token class-name">Material</span><span class="token punctuation">.</span>GREEN_CONCRETE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">final</span> <span class="token class-name">ItemMeta</span> pvpToggledEnabledMeta <span class="token operator">=</span> pvptoggle<span class="token punctuation">.</span><span class="token function">getItemMeta</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pvpToggledEnabledMeta<span class="token punctuation">.</span><span class="token function">setDisplayName</span><span class="token punctuation">(</span><span class="token class-name">ChatColor</span><span class="token punctuation">.</span>GREEN <span class="token operator">+</span> <span class="token string">"PVP is currently enabled!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    pvpToggledEnabledMeta<span class="token punctuation">.</span><span class="token function">setLore</span><span class="token punctuation">(</span><span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">singletonList</span><span class="token punctuation">(</span><span class="token string">"Click to disable PVP"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    PVP_TOGGLE_ENABLED<span class="token punctuation">.</span><span class="token function">setItemMeta</span><span class="token punctuation">(</span>pvpToggledEnabledMeta<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    PVP_TOGGLE_DISABLED <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ItemStack</span><span class="token punctuation">(</span><span class="token class-name">Material</span><span class="token punctuation">.</span>GREEN_CONCRETE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">final</span> <span class="token class-name">ItemMeta</span> pvpToggledDisabledMeta <span class="token operator">=</span> pvptoggle<span class="token punctuation">.</span><span class="token function">getItemMeta</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pvpToggledDisabledMeta<span class="token punctuation">.</span><span class="token function">setDisplayName</span><span class="token punctuation">(</span><span class="token class-name">ChatColor</span><span class="token punctuation">.</span>GREEN <span class="token operator">+</span> <span class="token string">"PVP is currently disabled!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    pvpToggledDisabledMeta<span class="token punctuation">.</span><span class="token function">setLore</span><span class="token punctuation">(</span><span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">singletonList</span><span class="token punctuation">(</span><span class="token string">"Click to enable PVP"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    PVP_TOGGLE_DISABLED<span class="token punctuation">.</span><span class="token function">setItemMeta</span><span class="token punctuation">(</span>pvpToggledDisabledMeta<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="reasoning"><a aria-hidden="true" class="anchor-heading" href="#reasoning"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Reasoning</h4>
+<p>My personal belief is that if a new instance of a class has been called twice at any given moment, the new instance is (or should be) uniquely different to the previous instance that was created - and if it weren't, it should be cached, or transformed into a Singleton.</p>
+<p>I might've missed to take something into account. (let me know if I did)</p>
+<h3 id="running-io-operations-on-main-thread"><a aria-hidden="true" class="anchor-heading" href="#running-io-operations-on-main-thread"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Running I/O Operations on Main Thread:</h3>
+<p>Running I/O operations on the main thread is heavily forbidden upon, as it'll force the main thread to wait until the operation is complete - and by nature, I/O operations are very resource intensive.</p>
+<p>I see that the config is being saved in the main thread, and as I mentioned above, it's a really bad practice. Look to the references below to learn how to save the config (or anything that IO/Network/thread-safe) async.</p>
+<h2 id="readability"><a aria-hidden="true" class="anchor-heading" href="#readability"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Readability</h2>
+<h3 id="class-naming"><a aria-hidden="true" class="anchor-heading" href="#class-naming"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Class Naming:</h3>
+<p>I noticed that some of the classes naming are quite misleading:</p>
+<ul>
+<li>CivUtils -> CivPlugin</li>
+<li>BorderUtils -> BorderHandler</li>
+<li>...etc</li>
+</ul>
+<p>The class names should aline with the class responsibilities for readability reasons. If the class is responsible for registering items, it should mention Registry somewhere in the class name (or something similar), and etc.</p>
+<h3 id="long-methods"><a aria-hidden="true" class="anchor-heading" href="#long-methods"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Long methods:</h3>
+<p>I see that the <code>ChatColor.translateAlternateColorCodes</code> method is being utilized directly, I'd highly recommend you to create a util class that would call the mentioned method for readability purposes.</p>
+<h3 id="naming-convention"><a aria-hidden="true" class="anchor-heading" href="#naming-convention"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Naming Convention:</h3>
+<p>The methods inside Manage class is not following the Java naming conventions.</p>
+<h2 id="other"><a aria-hidden="true" class="anchor-heading" href="#other"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Other</h2>
+<h3 id="multiple-lookups"><a aria-hidden="true" class="anchor-heading" href="#multiple-lookups"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Multiple Lookups:</h3>
+<p>I see that there's unnecessary lookup operations occurrisng, which could simply be cut down to a single lookup operation by caching said result to a variable. (referring <code>BorderUtils</code> class).</p>
+<p>It might seem to be insignificant at the moment, but that won't always be the case when you're dealing with concurrent operations (which will cost you a lot of time debugging the issue)</p>
+<p>Example can be seen in <a href="https://gist.github.com/Tofpu/2af109422b32b02ed33b421281751910">https://gist.github.com/Tofpu/2af109422b32b02ed33b421281751910</a> or here:</p>
+<pre class="language-java"><code class="language-java">  <span class="token keyword">final</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Integer</span><span class="token punctuation">></span></span> scoreMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  scoreMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"Tofpu"</span><span class="token punctuation">,</span> <span class="token number">69</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// doing multiple lookup to scoreMap, bad!</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>scoreMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"Tofpu"</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">69</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">final</span> <span class="token class-name">Integer</span> score <span class="token operator">=</span> scoreMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"Tofpu"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      scoreMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"Tofpu"</span><span class="token punctuation">,</span> score <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// decreased the lookup operation to one, good!</span>
+  <span class="token keyword">final</span> <span class="token class-name">Integer</span> score <span class="token operator">=</span> scoreMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"Tofpu"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>score <span class="token operator">></span> <span class="token number">69</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      scoreMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"Tofpu"</span><span class="token punctuation">,</span> score <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<h3 id="-and-equals-in-enums"><a aria-hidden="true" class="anchor-heading" href="#-and-equals-in-enums"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a><code>==</code> and <code>.equals</code> in Enums:</h3>
+<p>While comparing Enum's with .equals is not certainly wrong, it's overall a better practice to directly compare Enum's with <code>==</code>.</p>
+<p>By following that advice, you'll gain the following advantages:</p>
+<ul>
+<li>NullPointerException won't be thrown if the mentioned enum was nonexistent.</li>
+<li>Be subject to type compatibility at compile time.</li>
+</ul>
+<p>You can find references about this below.</p>
+<h2 id="thanks-to"><a aria-hidden="true" class="anchor-heading" href="#thanks-to"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>Thanks to:</h2>
+<ul>
+<li>Merlin (for correcting me about the differences between <code>==</code> and <code>.equals</code> in Enums)</li>
+</ul>
+<h2 id="references"><a aria-hidden="true" class="anchor-heading" href="#references"><svg aria-hidden="true" viewBox="0 0 16 16"><use xlink:href="#svg-link"></use></svg></a>References:</h2>
+<ul>
+<li>Encapsulation - <a href="https://refactoring.guru/encapsulate-field">https://refactoring.guru/encapsulate-field</a></li>
+<li>Bukkit Scheduler - <a href="https://bukkit.fandom.com/wiki/Scheduler_Programming#Example_2">https://bukkit.fandom.com/wiki/Scheduler_Programming#Example_2</a></li>
+<li>Differences between <code>==</code> and <code>.equals</code> in Enums - <a href="https://stackoverflow.com/questions/1750435/comparing-java-enum-members-or-equals">https://stackoverflow.com/questions/1750435/comparing-java-enum-members-or-equals</a></li>
+<li>Singleton - <a href="https://refactoring.guru/design-patterns/singleton">https://refactoring.guru/design-patterns/singleton</a></li>
+<li>Static Initialization Block - <a href="https://stackoverflow.com/questions/335311/what-is-the-difference-between-a-static-and-a-non-static-initialization-code-blo">https://stackoverflow.com/questions/335311/what-is-the-difference-between-a-static-and-a-non-static-initialization-code-blo</a></li>
+</ul>

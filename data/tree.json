@@ -1,0 +1,36 @@
+{
+  "roots": [
+    {
+      "key": "ij2lf9bl80nk3gr3k9mgaxn",
+      "title": "root",
+      "icon": null,
+      "hasTitleNumberOutlined": false,
+      "vaultName": "vault",
+      "children": [
+        {
+          "key": "388w3p1598pmub7oyu34ef0",
+          "title": "Code Review",
+          "icon": null,
+          "hasTitleNumberOutlined": false,
+          "vaultName": "vault",
+          "children": [
+            {
+              "key": "szp6r8w3ldllgnitjlwqi36",
+              "title": "Cooleg 1",
+              "icon": null,
+              "hasTitleNumberOutlined": false,
+              "vaultName": "vault",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "child2parent": {
+    "403": null,
+    "ij2lf9bl80nk3gr3k9mgaxn": null,
+    "388w3p1598pmub7oyu34ef0": "ij2lf9bl80nk3gr3k9mgaxn",
+    "szp6r8w3ldllgnitjlwqi36": "388w3p1598pmub7oyu34ef0"
+  }
+}

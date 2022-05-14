@@ -1,0 +1,363 @@
+{
+  "notes": {
+    "403": {
+      "vault": {
+        "fsPath": "vault"
+      },
+      "fname": "403",
+      "id": "403",
+      "title": "This page has not yet sprouted",
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1652493066711,
+      "created": 1652493066711,
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": null,
+      "data": {}
+    },
+    "ij2lf9bl80nk3gr3k9mgaxn": {
+      "id": "ij2lf9bl80nk3gr3k9mgaxn",
+      "title": "root",
+      "desc": "",
+      "updated": 1652438740193,
+      "created": 1652415450680,
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "fname": "root",
+      "type": "note",
+      "vault": {
+        "fsPath": "vault"
+      },
+      "contentHash": "ecc8b50ada25888f859008ffaf4f3f24",
+      "links": [],
+      "anchors": {
+        "welcome": {
+          "type": "header",
+          "text": "Welcome!",
+          "value": "welcome",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "links": {
+          "type": "header",
+          "text": "Links",
+          "value": "links",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "388w3p1598pmub7oyu34ef0"
+      ],
+      "parent": null,
+      "data": {}
+    },
+    "388w3p1598pmub7oyu34ef0": {
+      "id": "388w3p1598pmub7oyu34ef0",
+      "title": "Code Review",
+      "desc": "",
+      "updated": 1652449223273,
+      "created": 1652449129399,
+      "custom": {},
+      "fname": "code-review",
+      "type": "note",
+      "vault": {
+        "fsPath": "vault"
+      },
+      "contentHash": "371c1dcb6b7acab1518bde73100507af",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "szp6r8w3ldllgnitjlwqi36"
+      ],
+      "parent": "ij2lf9bl80nk3gr3k9mgaxn",
+      "data": {}
+    },
+    "szp6r8w3ldllgnitjlwqi36": {
+      "id": "szp6r8w3ldllgnitjlwqi36",
+      "title": "Cooleg 1",
+      "desc": "",
+      "updated": 1652492879625,
+      "created": 1652414487503,
+      "custom": {},
+      "fname": "code-review.cooleg-1",
+      "type": "note",
+      "vault": {
+        "fsPath": "vault"
+      },
+      "contentHash": "6e4de4d12159e35902ff3fce0f2138d3",
+      "links": [],
+      "anchors": {
+        "information": {
+          "type": "header",
+          "text": "Information",
+          "value": "information",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "requestor": {
+          "type": "header",
+          "text": "Requestor",
+          "value": "requestor",
+          "line": 9,
+          "column": 0,
+          "depth": 4
+        },
+        "project-link": {
+          "type": "header",
+          "text": "Project Link",
+          "value": "project-link",
+          "line": 12,
+          "column": 0,
+          "depth": 4
+        },
+        "project-model": {
+          "type": "header",
+          "text": "Project Model",
+          "value": "project-model",
+          "line": 15,
+          "column": 0,
+          "depth": 4
+        },
+        "code-review": {
+          "type": "header",
+          "text": "Code Review",
+          "value": "code-review",
+          "line": 18,
+          "column": 0,
+          "depth": 2
+        },
+        "encapsulation": {
+          "type": "header",
+          "text": "Encapsulation:",
+          "value": "encapsulation",
+          "line": 21,
+          "column": 0,
+          "depth": 3
+        },
+        "scenario-wanting-to-print-out-the-data": {
+          "type": "header",
+          "text": "Scenario: Wanting to print out the data",
+          "value": "scenario-wanting-to-print-out-the-data",
+          "line": 28,
+          "column": 0,
+          "depth": 4
+        },
+        "not-following-encapsulation-pattern": {
+          "type": "header",
+          "text": "Not Following Encapsulation Pattern",
+          "value": "not-following-encapsulation-pattern",
+          "line": 31,
+          "column": 0,
+          "depth": 5
+        },
+        "following-encapsulation-pattern": {
+          "type": "header",
+          "text": "Following Encapsulation Pattern",
+          "value": "following-encapsulation-pattern",
+          "line": 51,
+          "column": 0,
+          "depth": 5
+        },
+        "references-singleton-and-static": {
+          "type": "header",
+          "text": "References, Singleton and Static:",
+          "value": "references-singleton-and-static",
+          "line": 79,
+          "column": 0,
+          "depth": 3
+        },
+        "reasoning": {
+          "type": "header",
+          "text": "Reasoning",
+          "value": "reasoning",
+          "line": 105,
+          "column": 0,
+          "depth": 4
+        },
+        "running-io-operations-on-main-thread": {
+          "type": "header",
+          "text": "Running I/O Operations on Main Thread:",
+          "value": "running-io-operations-on-main-thread",
+          "line": 110,
+          "column": 0,
+          "depth": 3
+        },
+        "readability": {
+          "type": "header",
+          "text": "Readability",
+          "value": "readability",
+          "line": 115,
+          "column": 0,
+          "depth": 2
+        },
+        "class-naming": {
+          "type": "header",
+          "text": "Class Naming:",
+          "value": "class-naming",
+          "line": 116,
+          "column": 0,
+          "depth": 3
+        },
+        "long-methods": {
+          "type": "header",
+          "text": "Long methods:",
+          "value": "long-methods",
+          "line": 124,
+          "column": 0,
+          "depth": 3
+        },
+        "naming-convention": {
+          "type": "header",
+          "text": "Naming Convention:",
+          "value": "naming-convention",
+          "line": 127,
+          "column": 0,
+          "depth": 3
+        },
+        "other": {
+          "type": "header",
+          "text": "Other",
+          "value": "other",
+          "line": 130,
+          "column": 0,
+          "depth": 2
+        },
+        "multiple-lookups": {
+          "type": "header",
+          "text": "Multiple Lookups:",
+          "value": "multiple-lookups",
+          "line": 131,
+          "column": 0,
+          "depth": 3
+        },
+        "-and-equals-in-enums": {
+          "type": "header",
+          "text": "== and .equals in Enums:",
+          "value": "-and-equals-in-enums",
+          "line": 154,
+          "column": 0,
+          "depth": 3
+        },
+        "thanks-to": {
+          "type": "header",
+          "text": "Thanks to:",
+          "value": "thanks-to",
+          "line": 163,
+          "column": 0,
+          "depth": 2
+        },
+        "references": {
+          "type": "header",
+          "text": "References:",
+          "value": "references",
+          "line": 166,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "388w3p1598pmub7oyu34ef0",
+      "data": {}
+    }
+  },
+  "domains": [
+    {
+      "id": "ij2lf9bl80nk3gr3k9mgaxn",
+      "title": "root",
+      "desc": "",
+      "updated": 1652438740193,
+      "created": 1652415450680,
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "fname": "root",
+      "type": "note",
+      "vault": {
+        "fsPath": "vault"
+      },
+      "contentHash": "ecc8b50ada25888f859008ffaf4f3f24",
+      "links": [],
+      "anchors": {
+        "welcome": {
+          "type": "header",
+          "text": "Welcome!",
+          "value": "welcome",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "links": {
+          "type": "header",
+          "text": "Links",
+          "value": "links",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [
+        "388w3p1598pmub7oyu34ef0"
+      ],
+      "parent": null,
+      "data": {},
+      "body": "# Welcome!\n\nWill be written...\n\n## Links\n- Discord: Tofpu#3224 (__ID__: 470088969728557067)\n- Discord Server: https://tofpu.me/discord\n- GitHub: https://github.com/tofpu\n- Repository: https://github.com/tofpu/code-review"
+    }
+  ],
+  "noteIndex": {
+    "id": "ij2lf9bl80nk3gr3k9mgaxn",
+    "title": "root",
+    "desc": "",
+    "updated": 1652438740193,
+    "created": 1652415450680,
+    "custom": {
+      "nav_order": 0,
+      "permalink": "/"
+    },
+    "fname": "root",
+    "type": "note",
+    "vault": {
+      "fsPath": "vault"
+    },
+    "contentHash": "ecc8b50ada25888f859008ffaf4f3f24",
+    "links": [],
+    "anchors": {
+      "welcome": {
+        "type": "header",
+        "text": "Welcome!",
+        "value": "welcome",
+        "line": 7,
+        "column": 0,
+        "depth": 1
+      },
+      "links": {
+        "type": "header",
+        "text": "Links",
+        "value": "links",
+        "line": 11,
+        "column": 0,
+        "depth": 2
+      }
+    },
+    "children": [
+      "388w3p1598pmub7oyu34ef0"
+    ],
+    "parent": null,
+    "data": {},
+    "body": "# Welcome!\n\nWill be written...\n\n## Links\n- Discord: Tofpu#3224 (__ID__: 470088969728557067)\n- Discord Server: https://tofpu.me/discord\n- GitHub: https://github.com/tofpu\n- Repository: https://github.com/tofpu/code-review"
+  },
+  "vaults": [
+    {
+      "fsPath": "vault"
+    }
+  ]
+}
